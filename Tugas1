@@ -1,0 +1,19 @@
+karyawan1 = ("Nova","CEO",18,"Lombok")
+karyawan2 = ("Lica","Serketaris",20,"Bandung")
+karyawan3 = ("Ami","Bendahara",20,"Bali")
+karyawan4 = ("Soleh","Cleaning Servis",45,"Lombok")
+
+data_karyawan = (karyawan1,karyawan2,karyawan3,karyawan4)
+
+def daftar_karyawan():
+    print("--Daftar Karyawan--")
+    print()
+    for karyawan in data_karyawan:
+        print(f"Nama:{karyawan[0]}")
+        print(f"Jabatan:{karyawan[1]}")
+        print(f"Umur:{karyawan[2]}")
+        print(f"Asal:{karyawan[3]}") 
+        print(f"")
+        print()
+
+daftar_karyawan()
