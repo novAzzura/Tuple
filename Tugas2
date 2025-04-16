@@ -1,0 +1,45 @@
+transaksi_list = []
+
+def tambah_transaksi():
+    try:
+        id_transaksi = input("Masukkan ID Transaksi: ").strip()
+        id_produk = input("Masukkan ID Produk(nama): ").strip()
+        jumlah = int(input("Masukkan Jumlah Produk: "))
+        
+        transaksi = {
+            "ID Transaksi": id_transaksi,
+            "ID Produk": id_produk,
+            "Jumlah": jumlah
+        }
+        transaksi_list.append(transaksi)
+        print(f"Transaksi {id_transaksi} ditambahkan!\n")
+    except ValueError:
+        print("Input Eror. Pastikan jumlah berupa angka.\n")
+
+def tampilkan_transaksi():
+    if not transaksi_list:
+        print("Belum ada data transaksi.\n")
+        return
+    
+    print("Data Transaksi:")
+    for i, transaksi in enumerate(transaksi_list, start=1):
+        print(f"{i}. ID Transaksi: {transaksi['ID Transaksi']}, ID Produk: {transaksi['ID Produk']}, Jumlah: {transaksi['Jumlah']}")
+    print()
+
+while True:
+    print("Menu:")
+    print("1. Menambahkan Transaksi")
+    print("2. Menampilkan Transaksi")
+    print("3. Exit")
+    
+    pilihan = input("Memilih menu (1/2/3): ").strip()
+    
+    if pilihan == "1":
+        tambah_transaksi()
+    elif pilihan == "2":
+        tampilkan_transaksi()
+    elif pilihan == "3":
+        print("Keluar dari Transaksi.")
+        break
+    else:
+        print("Pilihan tidak ada, coba lagi.\n")
